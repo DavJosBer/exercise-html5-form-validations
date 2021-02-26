@@ -39,12 +39,13 @@ function validate() {
 
 function msj(id, tag) {
     if (id.value == '') {
-        id.classList.remove(`alert-success`)
         tag.style.display = 'block'
         tag.innerText = 'Por favor completa este campo';
-        tag.className = 'alert alert-danger'
+        tag.className = 'text-danger'
+        id.classList.add(`alert-danger`)
         setTimeout(() => {
-            tag.style.display = 'none'
+            tag.style.display = 'none';
+            id.classList.remove(`alert-danger`)
         }, 3000)
     } else { id.classList.add(`alert-success`) }
 }

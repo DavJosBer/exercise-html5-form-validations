@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="card">
-            <header class="card-header bg-info">
+            <header class="card-header bg-light">
                 <h1>Payment for example</h1>
             </header>
             <form id="form">
@@ -20,17 +20,19 @@
                     <div class="mb-3 row">
                         <div class="col-5">
                             <label for="card" class="form-label">Card #</label>
-                            <input type="text" class="form-control" id="card">
+                            <input type="text" class="form-control" id="card" placeholder="xxxxxxxxxxxxxxxxx">
                             <p id="alertCard"></p>
                         </div>
                         <div class="col-3">
                             <label for="cvc" class="form-label">CVC</label>
-                            <input type="number" class="form-control" id="cvc">
+                            <input type="number" class="form-control" id="cvc" placeholder="0000">
                             <p id="alertCvc"></p>
                         </div>
                         <div class="col-4">
                             <label for="amount" class="form-label">Amount</label>
-                            <input type="number" class="form-control" id="amount">
+                            <div class="d-flex justify-content-center">
+                                <i class="fas fa-dollar-sign fa-2x mx-2"></i><input type="number" class="form-control" id="amount" placeholder="Amount">
+                            </div>
                             <p id="alertAmount"></p>
                         </div>
                     </div>
@@ -72,31 +74,41 @@
 
                         </div>
                     </div>
-                    <div class="mb-3 form-check">
-                        <div class="d-flex">
-                            <div class="form-check me-3">
-                                <input class="form-check-input" type="radio" name="payment" id="masterCard">
-                                <label class="form-check-label" for="masterCard">
-                                     <i class="fab fa-cc-mastercard"></i>
+                    <div class="mb-3 row">
+                        <div class="col-6 form-check">
+                            <p>We Accept :</p>
+                            <div class="d-flex col-6 bg-secondary rounded p-2">
+                                <div class="form-check me-3">
+                                    <input class="form-check-input" type="radio" name="payment" id="masterCard">
+                                    <label class="form-check-label" for="masterCard">
+                                     <i class="fab fa-cc-mastercard fa-2x text-white"></i>
                                 </label>
+                                </div>
+                                <div class="form-check me-3">
+                                    <input class="form-check-input" type="radio" name="payment" id="visa" checked>
+                                    <label class="form-check-label" for="visa">
+                                        <i class="fab fa-cc-visa fa-2x text-white"></i>
+                                </label>
+                                </div>
+                                <div class="form-check me-3">
+                                    <input class="form-check-input" type="radio" name="payment" id="dClub" checked>
+                                    <label class="form-check-label" for="dClub">
+                                        <i class="fab fa-cc-diners-club fa-2x text-white"></i>
+                                </label>
+                                </div>
+                                <div class="form-check me-3">
+                                    <input class="form-check-input" type="radio" name="payment" id="amExpress" checked>
+                                    <label class="form-check-label" for="amExpress">
+                                        <i class="fab fa-cc-amex fa-2x text-white"></i>
+                                </label>
+                                </div>
                             </div>
-                            <div class="form-check me-3">
-                                <input class="form-check-input" type="radio" name="payment" id="visa" checked>
-                                <label class="form-check-label" for="visa">
-                                        <i class="fab fa-cc-visa"></i>
-                                </label>
-                            </div>
-                            <div class="form-check me-3">
-                                <input class="form-check-input" type="radio" name="payment" id="dClub" checked>
-                                <label class="form-check-label" for="dClub">
-                                        <i class="fab fa-cc-diners-club"></i>
-                                </label>
-                            </div>
-                            <div class="form-check me-3">
-                                <input class="form-check-input" type="radio" name="payment" id="amExpress" checked>
-                                <label class="form-check-label" for="amExpress">
-                                        <i class="fab fa-cc-amex"></i>
-                                </label>
+                        </div>
+                        <div class="col-6">
+                            <p>Message</p>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                <label for="floatingTextarea">Comments</label>
                             </div>
                         </div>
                     </div>
